@@ -1,6 +1,6 @@
+//movie banner showing page
 "use client";
 import React, { useEffect, useState } from 'react';
-// import Image from 'next/image';
 import Link from 'next/link';
 import axios from 'axios';
 import styles from './banner.module.css';
