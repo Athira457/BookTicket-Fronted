@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    margin-left: 400px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background: #fff;
+    border: 2px solid goldenrod;
+    border-radius: 8px;
+  }
+
+  .title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: goldenrod;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .message{
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(13, 167, 72);
+  }
+  

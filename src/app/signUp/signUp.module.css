@@ -1,0 +1,68 @@
+.signUpPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-left: 400px;
+  }
+  
+  .title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: goldenrod;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .signUpForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px goldenrod;
+  }
+
+  .roleInput, .roleLabel, .roleSelect{
+    color: black;
+    text-align: center;
+  }
+
+  .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .link{
+    color: black;
+    text-decoration: underline;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .paragraph{
+    color: rgb(44, 42, 42);
+    text-align: center;
+  }
+
+@media (max-width: 768px) {
+    .signUpPage {
+      padding: 10px;
+    }
+  
+    .signUpForm {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  }

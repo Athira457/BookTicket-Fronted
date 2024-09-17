@@ -1,0 +1,125 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: goldenrod;
+    color: black;
+  }
+  
+  .logoContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .appName {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .searchContainer {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  
+  .searchInput {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: rgb(46, 44, 44);
+    color: white;
+  }
+  
+  .cityDropdown {
+    margin-right: 20px;
+  }
+  
+  .citySelect {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: rgb(46, 44, 44);
+    color: white;
+    border-radius: 8px;
+  }
+  
+  .loginContainer {
+    position: relative;
+  }
+  
+  .loginText {
+    cursor: pointer;
+  }
+  
+  .loginPopup {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.8;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .logoutButton {
+    background-color: #fac928;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+ .signInButton {
+  background-color: #fac928;
+  color: white;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.signInButton:hover {
+  background-color: #ccca4d;
+}
+  
+  .navbar {
+    margin-top: 10px;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  

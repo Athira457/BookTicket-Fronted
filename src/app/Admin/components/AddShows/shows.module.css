@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap');
+
+.showContainer{
+    color: goldenrod;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    font-weight: 900;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: goldenrod;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+.form {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px goldenrod;
+    width: 100%;
+    max-width: 500px;
+}

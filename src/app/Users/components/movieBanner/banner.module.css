@@ -1,0 +1,25 @@
+/*movie banner styling*/
+
+.movieContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 36px; 
+    padding: 16px; 
+    height: 350px;
+  }
+  
+  .movieItem {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .movieItem a {
+    display: block;
+  }
+  
+  .movieItem:hover {
+    display: block; 
+  }
+  

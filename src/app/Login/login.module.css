@@ -1,0 +1,60 @@
+.loginPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    margin-left: 400px;
+  }
+
+
+  .title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: goldenrod;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px goldenrod;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .link{
+    color: goldenrod;
+    text-decoration: underline;
+    padding: 10px;
+    text-align: center;
+  }
+
+@media (max-width: 768px) {
+    .loginPage {
+      padding: 10px;
+    }
+  
+    .loginForm{
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  }

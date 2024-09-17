@@ -1,0 +1,69 @@
+/* movie Registration page styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap');
+
+.container{
+    color: goldenrod;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    font-weight: 900;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: goldenrod;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+}
+
+.form {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px goldenrod;
+    width: 100%;
+    max-width: 500px;
+}
+
+.formGroup, .label{
+    font-weight: 600;
+    font-family: poppins ;
+    color: goldenrod;
+    padding-bottom: 10px;
+}
+
+.languages{
+    font-family: poppins ;
+}
+
+.label{
+    font-family: poppins;
+    margin-left: 10px;
+}
+
+.languageLabel{
+    margin-left: 10px;
+}
+
+.button {
+    width: 95%;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: goldenrod;
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.15s ease-in-out;
+    margin-top: 20px;
+  }
+  
+  .button:hover {
+    background-color: #d4af37;
+    transform: translateY(-3px);
+  }

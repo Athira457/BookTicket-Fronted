@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap');
+
+.container {
+    font-family: poppins;
+    padding: 20px;
+  }
+  
+  .title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: goldenrod;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+  .table {
+    
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    border: 2px solid goldenrod;
+    padding: 8px;
+  }
+  
+  .table th {
+    background-color: #f4f4f4;
+  }
+  
+  .form {
+    margin-bottom: 20px;
+  }
+  
+  .form input {
+    margin-right: 10px;
+    padding: 8px;
+  }
+  
