@@ -2,7 +2,7 @@
 "use client";
 import React, { useState } from 'react';
 import axios from 'axios';
-// import {useRouter} from "next/navigation";
+import {useRouter} from "next/navigation";
 import CustomInput from '../../Utils/customInput';
 import CustomButton from '../../Utils/customButton';
 import styles from './login.module.css';
@@ -12,28 +12,22 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  // const router = useRouter();
+  const router = useRouter();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/login', { email, password });
-      console.log(response);
-      
-      const det = response.data 
-      console.log(det.token);
-      const token = det.token;
-      sessionStorage.setItem('token',token);
-      // if (response.data.success) {
-      //   if (response.data.role === 'admin') {
-      //     router.push('Admin/components/AdminSidebar');
-      //   } else {
-      //     router.push('Users');
-      //   }
-      // } else {
-      //   setErrorMessage('Login failed');
-      // }
+      const response = await axios.post('http://localhost:5000/login', { email, password });   
+      // const det = response.data 
+      // console.log(det.token);
+      // const token = det.token;
+      // sessionStorage.setItem('token',token);
+      if (response.data.success) {
+          router.push('Admin/components/AdminSidebar');
+      } else {
+        setErrorMessage('Login failed');
+      }
     } catch (error) {
       setErrorMessage('Error logging in, please try again.');
     }

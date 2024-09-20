@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import CustomInput from '../../Utils/customInput';
 import CustomButton from '../../Utils/customButton';
-import Verify from "../Verify/page"; 
+// import Verify from "../Verify/page"; 
 import styles from './SignUp.module.css';
 import Link from 'next/link';
-import { signIn } from 'next-auth/react';
+// import { signIn } from 'next-auth/react';
 
 const SignUp: React.FC = () => {
   const [uname, setName] = useState('');
@@ -39,9 +39,9 @@ const SignUp: React.FC = () => {
     }
   };
 
-  const handleGoogleSignIn = async () => {
-    signIn('google', { callbackUrl: '/dashboard' });
-  };
+  // const handleGoogleSignIn = async () => {
+  //   signIn('google', { callbackUrl: '/dashboard' });
+  // };
 
   return (
     <>
@@ -115,11 +115,12 @@ const SignUp: React.FC = () => {
             <CustomButton label="Sign Up" />
             <Link href="../Login" className={styles.link}>Already have an account</Link>
             <p className={styles.paragraph}>OR</p>
-            <CustomButton label="sign in with google" onClick={handleGoogleSignIn} />
+            {/* <CustomButton label="sign in with google" onClick={handleGoogleSignIn} /> */}
           </form>
         </div>
       ) : (
-        <Verify email={email} />  // Passing the email to Verify component
+        ""
+        // <Verify email={email} />  // Passing the email to Verify component
       )}
     </>
   );

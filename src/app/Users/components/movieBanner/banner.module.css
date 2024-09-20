@@ -3,9 +3,9 @@
 .movieContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
-    gap: 36px; 
-    padding: 16px; 
-    height: 350px;
+    gap: 16px; 
+    padding: 25px; 
+    height: auto;
   }
   
   .movieItem {

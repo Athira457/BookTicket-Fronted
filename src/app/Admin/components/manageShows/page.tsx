@@ -7,20 +7,22 @@ interface Show {
   _id: string;
   theatre: string;
   movie: string;
-  date: string;
   time: string;
+  seats: string;
+  ticketPrice: string;
 }
 
 const ManageShows: React.FC = () => {
+  const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const [shows, setShows] = useState<Show[]>([]);
-  const [editingShowId, setEditingShowId] = useState<string | null>(null); // To track the currently edited show
-  const [editData, setEditData] = useState<Partial<Show>>({}); // Track the data being edited
+  const [editingShowId, setEditingShowId] = useState<string | null>(null);
+  const [editData, setEditData] = useState<Partial<Show>>({}); 
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchShows = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/showsFetch');
+        const response = await axios.get(`${serverUrl}/showsFetch`);
         setShows(response.data);
       } catch (error) {
         setError('Failed to fetch shows');
@@ -33,7 +35,7 @@ const ManageShows: React.FC = () => {
   // Handle delete action
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:5000/showsDelete/${id}`);
+      await axios.delete(`${serverUrl}/showsDelete/${id}`);
       setShows((prevShows) => prevShows.filter((show) => show._id !== id));
     } catch (error) {
       setError('Failed to delete the show');
@@ -42,8 +44,9 @@ const ManageShows: React.FC = () => {
 
   // Handle edit click
   const handleEditClick = (show: Show) => {
-    setEditingShowId(show._id); // Set the ID of the show being edited
-    setEditData(show); // Set the data of the show being edited
+     // Set the ID of the show being edited
+    setEditingShowId(show._id);
+    setEditData(show); 
   };
 
   // Handle save action
@@ -51,7 +54,7 @@ const ManageShows: React.FC = () => {
     if (editingShowId) {
       try {
         // Send PUT request to update the show
-        await axios.put(`http://localhost:5000/showsEdit/${editingShowId}`, editData);
+        await axios.put(`${serverUrl}/showsEdit/${editingShowId}`, editData);
         setShows((prevShows) =>
           prevShows.map((show) =>
             show._id === editingShowId ? { ...show, ...editData } : show
@@ -66,8 +69,8 @@ const ManageShows: React.FC = () => {
 
   // Handle cancel action
   const handleCancelClick = () => {
-    setEditingShowId(null); // Exit edit mode without saving
-    setEditData({}); // Reset edit data
+    setEditingShowId(null); 
+    setEditData({}); 
   };
 
   // Handle input changes for editable fields
@@ -89,7 +92,8 @@ const ManageShows: React.FC = () => {
             <th>Theatre</th>
             <th>Movie</th>
             <th>Time</th>
-            <th>Date</th>
+            <th>Seats</th>
+            <th>Price</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -135,13 +139,25 @@ const ManageShows: React.FC = () => {
               <td>
                 {editingShowId === show._id ? (
                   <input
-                    type="date"
-                    name="date"
-                    value={editData.date || ''}
+                    type="text"
+                    name="seats"
+                    value={editData.seats || ''}
                     onChange={handleInputChange}
                   />
                 ) : (
-                  show.date
+                  show.seats
+                )}
+              </td>
+              <td>
+                {editingShowId === show._id ? (
+                  <input
+                    type="text"
+                    name="ticketPrice"
+                    value={editData.ticketPrice || ''}
+                    onChange={handleInputChange}
+                  />
+                ) : (
+                  show.ticketPrice
                 )}
               </td>
               <td>

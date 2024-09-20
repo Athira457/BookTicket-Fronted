@@ -8,6 +8,7 @@ import CustomInput from '@/Utils/customInput';
 import CustomButton from '@/Utils/customButton';
 
 export default function Movies() {
+  const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const [movieData, setMovieData] = useState({
     name: "",
     genre: "",
@@ -50,7 +51,7 @@ export default function Movies() {
     }
 
     try{
-      const res = await axios.post("http://localhost:5000/movies", formData, {
+      const res = await axios.post(`${serverUrl}/movies`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

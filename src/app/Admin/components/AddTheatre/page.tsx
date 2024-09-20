@@ -13,6 +13,7 @@ const Theatres = () => {
     city: '',
     state: '',
     seatingCapacity: '',
+    ticketPrice:'',
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -21,9 +22,10 @@ const Theatres = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/theatres', theatreData);
+      const res = await axios.post(`${serverUrl}/theatres`, theatreData);
       console.log(res.data);
        alert('Theatre Registered Successfully');
       setTheatreData({
@@ -32,6 +34,7 @@ const Theatres = () => {
         city: '',
         state: '',
         seatingCapacity: '',
+        ticketPrice:'',
       });
     } catch (error) {
       console.error('Error registering theatre:', error);
@@ -76,6 +79,13 @@ const Theatres = () => {
           label="Seating Capacity"
           name="seatingCapacity"
           value={theatreData.seatingCapacity}
+          onChange={handleInputChange}
+        />
+         <CustomInput
+          inputType="text"
+          label="Ticket Rate"
+          name="ticketPrice"
+          value={theatreData.ticketPrice}
           onChange={handleInputChange}
         />
         <CustomButton label="Register Theatre" />

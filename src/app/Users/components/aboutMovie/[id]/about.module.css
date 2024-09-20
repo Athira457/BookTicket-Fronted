@@ -1,12 +1,17 @@
 /* single movie show page styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap');
 
+.pageContainer{
+  display: inline;
+}
 .movieDetailContainer {
+  font-family: poppins;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     padding: 20px;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     background-color: #f9f9f9;
     border-radius: 10px;
@@ -32,6 +37,7 @@
   .movieInfo {
     flex: 2;
     display: flex;
+    font-family: poppins;
     flex-direction: column;
     justify-content: flex-start;
     padding: 10px;
@@ -41,11 +47,10 @@
     height: 400px;
   }
   
-  .movieInfo h1 {
+  .movieInfo .title {
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: #333;
-    font-family: 'Arial', sans-serif;
   }
   
   .movieInfo p {
@@ -63,6 +68,108 @@
     margin-top: 20px;
     font-size: 1.2rem;
   }
+
+  .button{
+    width: 200px;
+    color: black;
+    background-color: goldenrod;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 40px;
+
+  }
+
+.formGroup {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.formGroup input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styling for the sign-in popup */
+.signInOverlay, .otpOverlay, .modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signInPopup, .otpPopup, .modal {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.closeButton {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.closeButton:hover {
+  background-color: #c82333;
+}
+
+.submitButton {
+  width: 100%;
+  background-color: rgb(218, 174, 62);
+  color: black;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submitButton:hover {
+  background-color: goldenrod;
+}
+
+.submitGoogle{
+  background-color: rgb(64, 168, 209);
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+ .generateOtpButton, .okButton {
+  background-color: rgb(218, 174, 62);
+  color: black;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+ .generateOtpButton:hover, .okButton:hover {
+  background-color: goldenrod;
+}
   
   @media (max-width: 768px) {
     .movieDetailContainer {

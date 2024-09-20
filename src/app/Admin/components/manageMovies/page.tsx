@@ -13,6 +13,7 @@ interface Movie {
 }
 
 const ManageMovies: React.FC = () => {
+  const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const [movies, setMovies] = useState<Movie[]>([]);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editData, setEditData] = useState<Movie | null>(null);
@@ -21,7 +22,7 @@ const ManageMovies: React.FC = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/moviesFetch');
+        const response = await axios.get(`${serverUrl}/moviesFetch`);
         setMovies(response.data);
       } catch (error) {
         setError('Failed to fetch movies');
@@ -39,7 +40,7 @@ const ManageMovies: React.FC = () => {
   // Handle save button click (update the movie)
   const handleSave = async (id: string) => {
     try {
-      await axios.put(`http://localhost:5000/movieEdit/${id}`, editData);
+      await axios.put(`${serverUrl}/movieEdit/${id}`, editData);
       setMovies((prevMovies) =>
         prevMovies.map((movie) =>
           movie._id === id ? { ...movie, ...editData } : movie
@@ -54,7 +55,7 @@ const ManageMovies: React.FC = () => {
   // Handle delete action
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:5000/movieDelete/${id}`);
+      await axios.delete(`${serverUrl}/movieDelete/${id}`);
       setMovies((prevMovies) => prevMovies.filter((movie) => movie._id !== id));
     } catch (error) {
       setError('Failed to delete the movies');

@@ -12,15 +12,14 @@ interface Movie {
 }
 
 const MovieGrid: React.FC = () => {
-  const serverUrl = "http://localhost:5000"; 
-  console.log(serverUrl);
+  const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   
   const [movies, setMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/moviesFetch'); 
+        const response = await axios.get(`${serverUrl}/moviesFetch`); 
         setMovies(response.data);
         console.log(response.data)
       } catch (error) {

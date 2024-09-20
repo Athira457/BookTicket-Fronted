@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap');
+
+.pageContainer{
+  display: inline;
+  width: 100%;
+}
+.showDetailContainer {
+  font-family: poppins;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movieInfo {
+  margin: 20px;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  padding: 10px;
+}
+
+.item {
+  padding: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  width: fit-content;
+  transition: background-color 0.3s;
+}
+
+.selectedShow {
+  background-color: rgb(252, 252, 142);
+}
+
+.timeSelection {
+  margin-top: 20px;
+}
+
+.timeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.timeBox {
+  padding: 10px;
+  background-color: rgb(228, 228, 130);
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.selectedTime {
+  background-color: goldenrod;
+  color: white;
+}
+
+.seatsContainer {
+  margin-top: 20px;
+}
+
+.seatGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.seatBox {
+  width: 40px;
+  height: 40px;
+  background-color: lightgray;
+  border: 2px solid rgb(228, 228, 130);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.selectedSeat {
+  background-color: green;
+  color: white;
+}
+
+.selectedSeats {
+  margin-top: 20px;
+}
+
+.selectedSeats ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+.dateInput {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.button {
+  margin-top: 20px;
+  padding: 15px 20px;
+  background-color: goldenrod;
+  border-radius: 10px;
+  font-family: poppins;
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: gold;
+}

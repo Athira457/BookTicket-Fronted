@@ -10,9 +10,11 @@ interface Theatre {
   city: string;
   state: string;
   seatingCapacity: string;
+  ticketPrice:string;
 }
 
 const ShowTheatre: React.FC = () => {
+  const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const [theatres, setTheatres] = useState<Theatre[]>([]);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editData, setEditData] = useState<Theatre | null>(null);
@@ -21,7 +23,7 @@ const ShowTheatre: React.FC = () => {
   useEffect(() => {
     const fetchTheatres = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/theatresFetch');
+        const response = await axios.get(`${serverUrl}/theatresFetch`);
         setTheatres(response.data);
       } catch (error) {
         setError('Failed to fetch theatres');
@@ -39,7 +41,7 @@ const ShowTheatre: React.FC = () => {
   // Handle save button click (update the theatre)
   const handleSave = async (id: string) => {
     try {
-      await axios.put(`http://localhost:5000/theatreEdit/${id}`, editData);
+      await axios.put(`${serverUrl}/theatreEdit/${id}`, editData);
       setTheatres((prevTheatres) =>
         prevTheatres.map((theatre) =>
           theatre._id === id ? { ...theatre, ...editData } : theatre
@@ -54,7 +56,7 @@ const ShowTheatre: React.FC = () => {
   // Handle delete action
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:5000/theatreDelete/${id}`);
+      await axios.delete(`${serverUrl}/theatreDelete/${id}`);
       setTheatres((prevTheatres) => prevTheatres.filter((theatre) => theatre._id !== id));
     } catch (error) {
       setError('Failed to delete the theatre');
@@ -80,6 +82,7 @@ const ShowTheatre: React.FC = () => {
             <th>City</th>
             <th>State</th>
             <th>Seating Capacity</th>
+            <th>Ticket Rate</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -144,6 +147,18 @@ const ShowTheatre: React.FC = () => {
                   />
                 ) : (
                   theatre.seatingCapacity
+                )}
+              </td>
+              <td>
+                {editingId === theatre._id ? (
+                  <input
+                    name="ticketPrice"
+                    value={editData?.ticketPrice || ''}
+                    onChange={handleInputChange}
+                    className={styles.editCapacity}
+                  />
+                ) : (
+                  theatre.ticketPrice
                 )}
               </td>
               <td>
