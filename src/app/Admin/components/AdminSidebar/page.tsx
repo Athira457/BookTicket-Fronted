@@ -78,10 +78,7 @@ export default function Sidebar() {
               )}
             </li>
             <li>
-              <Link href="/dashboard/booking-details">View Bookings</Link>
-            </li>
-            <li>
-              <Link href="/dashboard/reviews">View Reviews</Link>
+              <Link href="/Admin/components/AdminSidebar">View Bookings</Link>
             </li>
           </ul>
         </nav>

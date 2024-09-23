@@ -193,6 +193,7 @@ const ShowDetails: React.FC<MovieDetailsProps> = ({ params }) => {
                 value={bookingDate}
                 onChange={handleDateChange}
                 className={styles.dateInput}
+                min={new Date().toISOString().split('T')[0]}
               /><br/>
               <button className={styles.button} onClick={handleBookNow}>
                 Book Now

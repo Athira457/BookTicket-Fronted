@@ -80,14 +80,14 @@ export default function Movies() {
       <h1 className={styles.title}>Movie Registration</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
       <CustomInput
-          label="Title"
+          label="Title *"
           inputType="text"
           name="name"
           value={movieData.name}
           onChange={handleInputChange}
         />
        <CustomInput
-          label="Genre"
+          label="Genre *"
           inputType="text"
           name="genre"
           value={movieData.genre}
@@ -95,7 +95,7 @@ export default function Movies() {
         />
 
         <div className={styles.formGroup}>
-          <label className={styles.label}>Languages</label>
+          <label className={styles.label}>Languages *</label>
           <div className={styles.checkboxGroup}>
             {["English", "Hindi", "Malayalam", "Tamil", "Telugu"].map((language) => (
               <label key={language} className={styles.languageLabel}>
@@ -112,28 +112,28 @@ export default function Movies() {
         </div>
         
         <CustomInput
-          label="Release Date"
+          label="Release Date *"
           inputType="date"
           name="release"
           value={movieData.release}
           onChange={handleInputChange}
         />
         <CustomInput
-          label="Duration"
+          label="Duration *"
           inputType="text"
           name="duration"
           value={movieData.duration}
           onChange={handleInputChange}
         />
         <CustomInput
-          label="Certification"
+          label="Certification *"
           inputType="text"
           name="certification"
           value={movieData.certification}
           onChange={handleInputChange}
         />
         <CustomInput
-          label="Synopsis"
+          label="Synopsis *"
           inputType="textarea"
           name="synopsis"
           value={movieData.synopsis}
@@ -141,7 +141,7 @@ export default function Movies() {
         />
 
         <div className={styles.formGroup}>
-          <label htmlFor="poster" className={styles.label}>Movie Poster :</label>
+          <label htmlFor="poster" className={styles.label}>Movie Poster * :</label>
           <input type="file" id="poster" className={styles.fileInput} onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 if (e.target.files && e.target.files.length > 0) {
                 SetPoster(e.target.files[0]); 

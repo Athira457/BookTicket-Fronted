@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 const Header: React.FC = () => {
     const [isLoginFormVisible, setIsLoginFormVisible] = useState(false);
 
-
     const handleSignInClick = () => {
       setIsLoginFormVisible(!isLoginFormVisible); 
     };
@@ -20,24 +19,6 @@ const Header: React.FC = () => {
           <span className={styles.appName}>Movie Booking</span>
         </div>
 
-        {/* Search Bar */}
-        <div className={styles.searchContainer}>
-          <input
-            type="text"
-            placeholder="Search for movies..."
-            className={styles.searchInput}
-          />
-        </div>
-
-        {/* City Dropdown */}
-        <div className={styles.cityDropdown}>
-          <select className={styles.citySelect}>
-            <option value="kochi">Kochi</option>
-            <option value="thrissur">Thrissur</option>
-            <option value="trivandrum">Trivandrum</option>
-            <option value="calicut">Calicut</option>
-          </select>
-        </div>
 
         {/* profile- Hover for Pop-up */}
         <div className={styles.loginContainer}>

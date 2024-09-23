@@ -58,21 +58,21 @@ const Shows = () => {
       <h1 className={styles.title}>Show Time Registration</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
         <CustomInput
-          label="Theatre"
+          label="Theatre *"
           inputType="text"
           name="theatre"
           value={showsData.theatre}
           onChange={handleInputChange}
         />
         <CustomInput
-          label="Movie"
+          label="Movie *"
           inputType="text"
           name="movie"
           value={showsData.movie}
           onChange={handleInputChange}
         />
         <CustomInput
-          label="Date"
+          label="Date *"
           inputType="date"
           name="date"
           value={showsData.date}
@@ -80,7 +80,7 @@ const Shows = () => {
         />
          {/* Checkboxes for selecting multiple show times */}
          <div className={styles.formGroup}>
-          <label className={styles.label}>Show Times</label>
+          <label className={styles.label}>Show Times *</label>
           <div className={styles.checkboxGroup}>
             {availableShowTimes.map((times) => (
               <label key={times} className={styles.timeLabel}>
@@ -97,14 +97,14 @@ const Shows = () => {
           </div>
         </div>
         <CustomInput
-          label="Seats"
+          label="Seats *"
           inputType="text"
           name="seats"
           value={showsData.seats}
           onChange={handleInputChange}
         />
          <CustomInput
-          label="Ticket Price"
+          label="Ticket Price *"
           inputType="text"
           name="ticketPrice"
           value={showsData.ticketPrice}

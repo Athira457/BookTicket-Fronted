@@ -47,28 +47,28 @@ const Theatres = () => {
       <h1 className={styles.title}>Theatre Registration</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
         <CustomInput
-          label="Theatre Name"
+          label="Theatre Name *"
           inputType="text"
           name="name"
           value={theatreData.name}
           onChange={handleInputChange}
         />
         <CustomInput
-          label="Location"
+          label="Location *"
           inputType="text"
           name="location"
           value={theatreData.location}
           onChange={handleInputChange}
         />
         <CustomInput
-          label="City"
+          label="City *"
           inputType="text"
           name="city"
           value={theatreData.city}
           onChange={handleInputChange}
         />
         <CustomInput
-          label="State"
+          label="State *"
           inputType="text"
           name="state"
           value={theatreData.state}
@@ -76,14 +76,14 @@ const Theatres = () => {
         />
          <CustomInput
           inputType="text"
-          label="Seating Capacity"
+          label="Seating Capacity *"
           name="seatingCapacity"
           value={theatreData.seatingCapacity}
           onChange={handleInputChange}
         />
          <CustomInput
           inputType="text"
-          label="Ticket Rate"
+          label="Ticket Rate *"
           name="ticketPrice"
           value={theatreData.ticketPrice}
           onChange={handleInputChange}

@@ -19,10 +19,7 @@ const Login: React.FC = () => {
 
     try {
       const response = await axios.post('http://localhost:5000/login', { email, password });   
-      // const det = response.data 
-      // console.log(det.token);
-      // const token = det.token;
-      // sessionStorage.setItem('token',token);
+   
       if (response.data.success) {
           router.push('Admin/components/AdminSidebar');
       } else {
